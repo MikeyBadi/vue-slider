@@ -31,7 +31,8 @@ const app = new Vue({
             }
         ],
         
-        counterImg: 0
+        counterImg: 0,
+        counterActive: 0
     },
     methods: {
         nextPhoto(){
@@ -40,7 +41,7 @@ const app = new Vue({
             if(this.counterImg>this.slides.length - 1){
                 this.counterImg = 0
             };
-            console.log(counterImg);
+            console.log(this.counterImg);
         },
         prevPhoto(){
             this.counterImg--
@@ -48,12 +49,17 @@ const app = new Vue({
             if(this.counterImg < 0){
                 this.counterImg = this.slides.length - 1;
             };
-            console.log(counterImg);
+            console.log(this.counterImg);
         }
     },
 
     mounted() {
         console.log("prova");
+        setInterval(() =>{
+
+            this.nextPhoto()
+
+        }, 3000)
     },
 })
 
