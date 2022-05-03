@@ -37,7 +37,18 @@ const app = new Vue({
         nextPhoto(){
             this.counterImg++
 
-            if
+            if(this.counterImg>this.slides.length - 1){
+                this.counterImg = 0
+            };
+            console.log(counterImg);
+        },
+        prevPhoto(){
+            this.counterImg--
+
+            if(this.counterImg < 0){
+                this.counterImg = this.slides.length - 1;
+            };
+            console.log(counterImg);
         }
     },
 
