@@ -42,6 +42,7 @@ const app = new Vue({
                 this.counterImg = 0
             };
             console.log(this.counterImg);
+            
         },
         prevPhoto(){
             this.counterImg--
@@ -50,17 +51,27 @@ const app = new Vue({
                 this.counterImg = this.slides.length - 1;
             };
             console.log(this.counterImg);
-        }
-    },
+        },
+        clickImg(indice){
+            console.log("......." + indice);
+            this.counterImg = indice
+        },
+        
 
+
+    },
+    
     mounted() {
         console.log("prova");
         setInterval(() =>{
 
-            this.nextPhoto()
+            this.nextPhoto();
 
         }, 3000)
-    },
+        
+
+
+    }
 })
 
 
