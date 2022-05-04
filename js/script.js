@@ -56,6 +56,15 @@ const app = new Vue({
             console.log("......." + indice);
             this.counterImg = indice
         },
+        stopAuto() {
+            clearInterval(this.autoPhoto);
+        },
+
+        autoResume(){
+            setInterval( this.autoPhoto = setInterval(() =>{
+                this.nextPhoto();
+            }, 3000))
+        }
         
 
 
@@ -63,7 +72,7 @@ const app = new Vue({
     
     mounted() {
         console.log("prova");
-        setInterval(() =>{
+        this.autoPhoto = setInterval(() =>{
 
             this.nextPhoto();
 

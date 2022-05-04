@@ -14,7 +14,8 @@
     <div id="app">
 
         <div class="container" >
-            <div class="slider-wrapper" tabindex="0">
+            <div v-on:mouseover="stopAuto()"
+            v-on:mouseleave="autoResume()" class="slider-wrapper" tabindex="0">
 
                 <div class="item">
                     <img :src="slides[counterImg].image" :alt="slides[counterImg].title" />
